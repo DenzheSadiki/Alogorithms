@@ -11,7 +11,6 @@ class Solution {
     public bool second = false;
     public int firstindex ;
 
-
       public int solution(int N)
       {
     
@@ -21,25 +20,25 @@ class Solution {
        
         for(int i=0;i<array.Length-1;i++)
         {			
-			if(int.Parse(array[i].ToString())==1 &&  first==false)
-            {
-                first =true;
-				firstindex = i;
-            }
-			
-			if(int.Parse(array[i].ToString())==0 && first==true)
-            {
-                count++;
-            }
-            
-			if(int.Parse(array[i].ToString())==1 && firstindex != i)
-            {
-                first =false;
-				maxcount = Math.Max(count,maxcount);
-				count =0;
-            }
-            
-        }
+		if(int.Parse(array[i].ToString())==1 &&  first==false)
+		{
+			first =true;
+			firstindex = i;
+		}
+
+		if(int.Parse(array[i].ToString())==0 && first==true)
+		{
+			count++;
+		}
+
+		if(int.Parse(array[i].ToString())==1 && firstindex != i)
+		{
+			first =false;
+			maxcount = Math.Max(count,maxcount);
+			count =0;
+		}
+
+	}
 
         return maxcount;
     }
