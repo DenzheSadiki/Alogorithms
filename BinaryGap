@@ -1,6 +1,4 @@
- 
-
-using System;
+ using System;
 
 
 class Solution {
@@ -10,36 +8,45 @@ class Solution {
     public bool first=false;
     public bool second = false;
     public int firstindex ;
-
+    public int secondIndex;
       public int solution(int N)
       {
     
         var binary = Convert.ToString(N, 2);  
         var array = binary.ToString().ToCharArray();
 
-       
+        Console.WriteLine(binary);
+
         for(int i=0;i<array.Length-1;i++)
         {			
-		if(int.Parse(array[i].ToString())==1 &&  first==false)
-		{
-			first =true;
-			firstindex = i;
-		}
+            if(int.Parse(array[i].ToString())==1 && 
+             first==false  )
+            {
+                first =true;
+                firstindex = i;
+            }
 
-		if(int.Parse(array[i].ToString())==0 && first==true)
-		{
-			count++;
-		}
+        
 
-		if(int.Parse(array[i].ToString())==1 && firstindex != i)
-		{
-			first =false;
-			maxcount = Math.Max(count,maxcount);
-			count =0;
-		}
+            if(int.Parse(array[i].ToString())==1 && firstindex!=i)
+            {
+
+                var gap = (i - firstindex) -1;
+           
+                maxcount = Math.Max(gap,maxcount);
+
+                if(maxcount<0)
+                {
+                    maxcount =0;
+                }
+
+               firstindex = i;
+              
+                
+            }
 
 	}
-
+        Console.WriteLine(maxcount);
         return maxcount;
     }
 }
