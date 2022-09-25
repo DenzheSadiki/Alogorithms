@@ -1,0 +1,13 @@
+function rotateLeft(d, arr) {
+   
+        for(var i=0; i<d; i++)
+        {
+            var first =arr[0];
+       
+            arr =arr.slice(1);
+            arr.push(first);
+        }
+        
+        return arr;
+
+}
