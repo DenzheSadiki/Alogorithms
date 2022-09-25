@@ -1,0 +1,15 @@
+
+    public static List<int> rotateLeft(int d, List<int> arr)
+    {
+        
+        for(int i=0; i<d; i++)
+        {
+            var first =tempArray[array.count()-1];
+            var temp = List[..^1];
+            arr =temp;
+            arr.Add(first);
+        }
+        
+        return arr;
+
+    }
