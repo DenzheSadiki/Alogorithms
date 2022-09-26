@@ -1,14 +1,14 @@
  public static List<int> rotateLeft(int d, List<int> arr)
   {
         
-        for(int i=0; i<d; i++)
+        while(d != 0)
         {
-            var first =arr[0];
-       
-            arr =arr.Skip(1).ToList();
+            var first = arr[0];
             arr.Add(first);
+            arr.Remove(first);
+            d--;
         }
-        
+
         return arr;
 
     }
